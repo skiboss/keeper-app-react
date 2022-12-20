@@ -3,12 +3,17 @@ import Header from "./Header";
 import Note from "./Note";
 import Footer from "./Footer";
 
-export default function App() {
+function App() {
   return (
     <div>
       <Header />
-      <Note />
+      {notes.map((prop) => (
+        <Note key={prop.key} title={prop.title} content={prop.content} />
+      ))}
+      ;
       <Footer />
     </div>
   );
 }
+
+export default App;
